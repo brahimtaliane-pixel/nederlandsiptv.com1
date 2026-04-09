@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
+import BrandMark from '@/components/ui/BrandMark';
 
 /** Inline SVGs avoid Turbopack HMR bugs with lucide-react chunk graphs on Header. */
 function IconMenu({ className }: { className?: string }) {
@@ -66,11 +67,7 @@ export default function Header() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="flex items-center justify-between h-16 lg:h-[72px]">
             <Link href="/" className="flex items-center gap-2.5 shrink-0">
-              <div
-                className="w-8 h-8 nl-flag shrink-0"
-                aria-hidden={true}
-                suppressHydrationWarning
-              />
+              <BrandMark className="w-8 h-8 shrink-0" />
               <span className="text-[22px] font-extrabold tracking-tight text-text">
                 IPTV<span className="text-swiss-red">NEDERLAND</span>
               </span>

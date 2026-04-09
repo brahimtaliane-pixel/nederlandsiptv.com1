@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { SITE_CONFIG } from '@/lib/constants';
 import { NL_CITY_SLUGS_ORDERED } from '@/lib/nl-city-slugs';
 import { CITIES_DATA } from '@/lib/cities';
+import BrandMark from '@/components/ui/BrandMark';
 
 const FOOTER_CITIES: readonly string[] = Array.from(NL_CITY_SLUGS_ORDERED);
 
@@ -20,11 +21,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div
-                className="w-7 h-7 nl-flag shrink-0"
-                aria-hidden={true}
-                suppressHydrationWarning
-              />
+              <BrandMark className="w-7 h-7 shrink-0" />
               <span className="text-lg font-extrabold tracking-tight">
                 IPTV<span className="text-swiss-red">NEDERLAND</span>
               </span>

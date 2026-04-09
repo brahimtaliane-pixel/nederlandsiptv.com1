@@ -1,10 +1,4 @@
-import {
-  SITE_CONFIG,
-  PRICE_CURRENCY,
-  PRICE_CURRENCY_SYMBOL,
-  SCHEMA_PRICE_RANGE,
-  SCHEMA_PRICE_VALID_UNTIL,
-} from '@/lib/constants';
+import { SITE_CONFIG, PRICE_CURRENCY, SCHEMA_PRICE_VALID_UNTIL } from '@/lib/constants';
 import { localeUrl } from '@/lib/utils';
 import type { SitePlan } from '@/lib/get-plans';
 
@@ -16,11 +10,6 @@ interface JsonLdProps {
 }
 
 export default function JsonLd({ locale, plans, phone }: JsonLdProps) {
-  const prices = plans.map((p) => p.price);
-  const priceRange =
-    prices.length > 0
-      ? `${PRICE_CURRENCY_SYMBOL} ${Math.min(...prices)} - ${PRICE_CURRENCY_SYMBOL} ${Math.max(...prices)}`
-      : SCHEMA_PRICE_RANGE;
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -40,7 +29,6 @@ export default function JsonLd({ locale, plans, phone }: JsonLdProps) {
       '@type': 'PostalAddress',
       addressCountry: 'NL',
     },
-    sameAs: [],
   };
 
   const websiteSchema = {
@@ -130,31 +118,6 @@ export default function JsonLd({ locale, plans, phone }: JsonLdProps) {
     },
   };
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: SITE_CONFIG.name,
-    url: SITE_CONFIG.url,
-    telephone: phone,
-    email: SITE_CONFIG.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '52.3676',
-      longitude: '4.9041',
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    },
-    priceRange,
-  };
-
   return (
     <>
       <script
@@ -179,10 +142,6 @@ export default function JsonLd({ locale, plans, phone }: JsonLdProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
     </>
   );

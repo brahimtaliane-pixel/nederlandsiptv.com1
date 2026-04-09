@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   IPTV Nederland — brand red + Dutch flag mark. Minimal. Premium.
+   IPTV Nederland — brand red + neutral UI. Minimal. Premium.
    ============================================================ */
 
 @theme {
@@ -51,19 +51,3 @@ body {
   color: white;
 }
 
-/* Netherlands flag — horizontal tricolor (for logo mark) */
-.nl-flag {
-  display: inline-block;
-  flex-shrink: 0;
-  border-radius: 4px;
-  background: linear-gradient(
-    to bottom,
-    #ae1c28 0%,
-    #ae1c28 33.333%,
-    #ffffff 33.333%,
-    #ffffff 66.666%,
-    #21468b 66.666%,
-    #21468b 100%
-  );
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
-}

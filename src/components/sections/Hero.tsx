@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import type { SiteStatsSnapshot } from '@/lib/constants';
+import BrandMark from '@/components/ui/BrandMark';
 
 export default function Hero({ statValues }: { statValues: SiteStatsSnapshot }) {
   const t = useTranslations('hero');
@@ -22,11 +23,7 @@ export default function Hero({ statValues }: { statValues: SiteStatsSnapshot }) 
           <div>
             {/* Badge — logo mark stays outside motion to avoid SSR/client tree drift with Framer */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-swiss-red/5 border border-swiss-red/15 rounded-full mb-6">
-              <div
-                className="w-6 h-6 nl-flag shrink-0"
-                aria-hidden={true}
-                suppressHydrationWarning
-              />
+              <BrandMark className="w-6 h-6 shrink-0" />
               <motion.span
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}

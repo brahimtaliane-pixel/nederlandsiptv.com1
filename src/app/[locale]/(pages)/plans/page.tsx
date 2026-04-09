@@ -17,6 +17,7 @@ import { SITE_CONFIG, PRICE_CURRENCY, PRICE_CURRENCY_SYMBOL, SCHEMA_PRICE_VALID_
 import { getPlans } from '@/lib/get-plans';
 import { localeUrl, formatPrice, getMonthlyPrice, getDiscount } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/seo/SchemaMarkup';
+import BrandMark from '@/components/ui/BrandMark';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -211,11 +212,7 @@ export default async function PlansHubPage({ params }: Props) {
 
         <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-swiss-red/5 border border-swiss-red/15 rounded-full mb-6">
-            <div
-              className="w-6 h-6 nl-flag shrink-0"
-              aria-hidden={true}
-              suppressHydrationWarning
-            />
+            <BrandMark className="w-6 h-6 shrink-0" />
             <span className="text-xs font-semibold text-swiss-red tracking-wide uppercase">
               {copy.badge}
             </span>
