@@ -86,7 +86,7 @@ function StickyCTA({
                   href={directHref}
                   className="px-6 py-2.5 bg-swiss-red text-white font-semibold rounded-lg hover:bg-swiss-red-dark transition-colors text-sm"
                 >
-                  {t('payDirectly')}
+                  {t('subscribeNow')}
                 </a>
               ) : (
                 <button
@@ -344,7 +344,7 @@ export default function PlanPageClient({
                         href={directHref}
                         className="block w-full py-3 bg-swiss-red text-white font-bold text-sm rounded-lg hover:bg-swiss-red-dark transition-colors tracking-wide text-center"
                       >
-                        {t('payDirectly')}
+                        {t('subscribeNow')}
                       </a>
                     ) : (
                       <button
@@ -502,7 +502,7 @@ export default function PlanPageClient({
                         href={directHref}
                         className="block w-full py-3 bg-swiss-red text-white font-bold text-sm rounded-lg hover:bg-swiss-red-dark transition-colors tracking-wide text-center"
                       >
-                        {t('payDirectly')}
+                        {t('subscribeNow')}
                       </a>
                     ) : (
                       <button
