@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   await params;
 
-  const multiUrl = `${SITE_CONFIG.url}/multi-ecrans`;
+  const multiUrl = `${SITE_CONFIG.url}/multi-scherm`;
   const title =
     'IPTV multi-scherm — 2, 3 of 4 schermen tegelijk | IPTV Nederland';
   const description =
@@ -90,7 +90,7 @@ export default async function MultiEcransPage({ params }: Props) {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: localeUrl(locale) },
-          { name: 'Multi-scherm', url: localeUrl(locale, '/multi-ecrans') },
+          { name: 'Multi-scherm', url: localeUrl(locale, '/multi-scherm') },
         ]}
       />
       <MultiScreenSchema locale={locale} plans={plans} />

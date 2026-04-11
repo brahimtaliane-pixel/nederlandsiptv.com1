@@ -49,7 +49,7 @@ export default function Header() {
   const navItems = [
     { label: t('home'), href: '/' },
     { label: t('plans'), href: '/plans' },
-    { label: t('multiScreen'), href: '/multi-ecrans' },
+    { label: t('multiScreen'), href: '/multi-scherm' },
     { label: t('faq'), href: '/faq' },
     { label: t('installation'), href: '/installation' },
     { label: t('contact'), href: '/contact' },

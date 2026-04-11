@@ -63,6 +63,8 @@ const nextConfig: NextConfig = {
       { source: '/abonnement-iptv-nederland', destination: '/#pricing', permanent: true },
       // Legacy Swiss marketing URL → homepage pricing (keep for old backlinks)
       { source: '/abonnement-iptv-suisse', destination: '/#pricing', permanent: true },
+      // Old French slug → Dutch URL (bookmarks & external links)
+      { source: '/multi-ecrans', destination: '/multi-scherm', permanent: true },
       { source: '/iptv-plan/:slug', destination: '/plans/:slug', permanent: true },
       { source: '/guide-dinstallation-iptv', destination: '/installation', permanent: true },
       { source: '/a-propos', destination: '/about', permanent: true },
