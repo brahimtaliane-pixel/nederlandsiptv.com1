@@ -33,15 +33,14 @@ const DMCA_SCANNER_UA = [
   'audiblemagic',
   'vobile',
   'digimarc',
-  'onsist',
+  // Note: do not use short tokens like "onsist" (matches "consistent") or
+  // "entura" (matches "Ventura") or "nagra" (matches Nagra in TV/STB UAs).
   'red points',
   'redpoints',
   'nagravision',
-  'nagra',
   'viaccess',
   'irdeto',
   'nexguard',
-  'entura',
   'reposcan',
   'copytrack',
   'copyright agent',
@@ -70,5 +69,5 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(nl)/:path*', '/((?!api|_next|_vercel|images|admin|geo-blocked|.*\\..*).*)'],
+  matcher: ['/', '/(nl)/:path*', '/((?!api|_next|_vercel|images|admin|.*\\..*).*)'],
 };
