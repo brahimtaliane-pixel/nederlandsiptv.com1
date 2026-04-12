@@ -206,11 +206,16 @@
   "footer": {
     "description": "TV-streaming in Nederland. 30.000+ zenders HD/4K, 170.000+ films en series on demand en 7 dagen replay op al je schermen.",
     "links": "Handige links",
+    "topicPages": "Thema's",
     "cities": "Steden",
     "support": "Support",
     "legal": "Juridisch",
     "privacy": "Privacybeleid",
     "terms": "Algemene voorwaarden",
+    "pandoraIptvPage": "Pandora IPTV",
+    "iptvKopenPage": "IPTV kopen",
+    "dutchIptvPage": "Dutch IPTV",
+    "iptvAbonnementPage": "IPTV abonnement",
     "copyright": "© {year} IPTV Nederland. Alle rechten voorbehouden.",
     "madeIn": "Met ❤️ voor kijkers in Nederland"
   },

@@ -41,6 +41,13 @@ export default function Footer() {
               <li><Link href="/faq" className="text-sm text-white/60 hover:text-white transition-colors">{nav('faq')}</Link></li>
               <li><Link href="/installation" className="text-sm text-white/60 hover:text-white transition-colors">{nav('installation')}</Link></li>
             </ul>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3 mt-6">{t('topicPages')}</h3>
+            <ul className="space-y-2.5">
+              <li><Link href="/pandora-iptv" className="text-sm text-white/60 hover:text-white transition-colors">{t('pandoraIptvPage')}</Link></li>
+              <li><Link href="/iptv-kopen" className="text-sm text-white/60 hover:text-white transition-colors">{t('iptvKopenPage')}</Link></li>
+              <li><Link href="/dutch-iptv" className="text-sm text-white/60 hover:text-white transition-colors">{t('dutchIptvPage')}</Link></li>
+              <li><Link href="/iptv-abonnement" className="text-sm text-white/60 hover:text-white transition-colors">{t('iptvAbonnementPage')}</Link></li>
+            </ul>
           </div>
 
           {/* Support */}
