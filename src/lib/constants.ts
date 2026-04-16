@@ -2,8 +2,8 @@
 // IPTV Nederland - Constants & Configuration
 // ============================================================
 
-/** Production default when `NEXT_PUBLIC_SITE_URL` is not set at build time (www for canonical consistency). */
-const DEFAULT_PUBLIC_ORIGIN = 'https://www.nederlandsiptv.com';
+/** Production default when `NEXT_PUBLIC_SITE_URL` is not set at build time (apex / non-www). */
+const DEFAULT_PUBLIC_ORIGIN = 'https://nederlandsiptv.com';
 
 /**
  * Public site origin for canonical URLs, JSON-LD, metadata, emails domain.
@@ -38,14 +38,12 @@ function hostnameFromOrigin(origin: string): string {
 
 const _publicOrigin = resolvePublicOrigin();
 const _publicHost = hostnameFromOrigin(_publicOrigin);
-/** Apex / registrable domain for `contact@` and From headers (strip `www.` when origin is www). */
-const _publicDomain = _publicHost.replace(/^www\./i, '') || _publicHost;
 const _contactEmail =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || `contact@${_publicDomain}`;
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || `contact@${_publicHost}`;
 
 export const SITE_CONFIG = {
   name: 'IPTV Nederland',
-  domain: _publicDomain,
+  domain: _publicHost,
   url: _publicOrigin,
   email: _contactEmail,
   // TODO: Replace with real phone number before go-live
