@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import crypto from 'crypto';
-import { getAdminLoginEmail } from '@/lib/admin-auth';
+import { ADMIN_PANEL_LOGIN_EMAIL } from '@/lib/admin-panel-email';
 
-const ADMIN_EMAIL = getAdminLoginEmail();
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL?.trim() || ADMIN_PANEL_LOGIN_EMAIL;
 const ADMIN_PASSWORD = 'Karimisaac2311@';
 const SESSION_SECRET =
   process.env.ADMIN_SESSION_SECRET ?? process.env.SUPABASE_SERVICE_ROLE_KEY ?? '';
