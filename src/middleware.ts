@@ -53,6 +53,18 @@ const DMCA_SCANNER_UA = [
 ];
 
 export default function middleware(request: NextRequest) {
+  // Apex → www (canonical hostname in production only)
+  if (process.env.NODE_ENV === 'production') {
+    const rawHost = request.headers.get('x-forwarded-host') || request.headers.get('host') || '';
+    const host = rawHost.split(':')[0]?.toLowerCase() ?? '';
+    if (host === 'nederlandsiptv.com') {
+      const url = request.nextUrl.clone();
+      url.hostname = 'www.nederlandsiptv.com';
+      url.port = '';
+      return NextResponse.redirect(url, 308);
+    }
+  }
+
   const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
 
   // 1) Block known DMCA / anti-piracy crawlers everywhere on the site.
